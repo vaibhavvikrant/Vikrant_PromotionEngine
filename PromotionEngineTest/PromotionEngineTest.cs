@@ -11,9 +11,11 @@ namespace PromotionEngineTest
         public void FixedPriceTest()
         {
             var product = new ProductToBuy { Product = Products.ProductA, Count = 1 };
-            var obj = new Sku(new List<ProductToBuy> { product });
+            var product1 = new ProductToBuy { Product = Products.ProductB, Count = 1 };
+            var product2 = new ProductToBuy { Product = Products.ProductC, Count = 1 };
+            var obj = new Sku(new List<ProductToBuy> { product, product1, product2 });
             var finalPrice = obj.PromotionalPrice;
-            Assert.AreEqual(50, finalPrice);
+            Assert.AreEqual(100, finalPrice);
         }
     }
 }

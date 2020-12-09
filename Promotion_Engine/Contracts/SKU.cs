@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Promotion_Engine.Implementation;
 using Promotion_Engine.Interface;
 
 namespace Promotion_Engine.Contracts
@@ -27,6 +28,6 @@ namespace Promotion_Engine.Contracts
         }
 
         //Add all the new implementation of IPromotion
-        public List<IPromotion> ApplyPromotion => new List<IPromotion>();
+        public List<IPromotion> ApplyPromotion => new List<IPromotion>{ new FixedPricePromotion() };
     }
 }
