@@ -23,6 +23,13 @@ namespace PromotionEngineTest
             obj = new Sku(new List<ProductToBuy> { product, product1, product2 });
             finalPrice = obj.PromotionalPrice;
             Assert.AreEqual(370, finalPrice);
+
+            product = new ProductToBuy { Product = Products.ProductA, Count = 3 };
+            product1 = new ProductToBuy { Product = Products.ProductB, Count = 5 };
+            var product3 = new ProductToBuy { Product = Products.ProductD, Count = 1 };
+            obj = new Sku(new List<ProductToBuy> { product, product1, product3 });
+            finalPrice = obj.PromotionalPrice;
+            Assert.AreEqual(280, finalPrice);
         }
     }
 }

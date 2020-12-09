@@ -29,6 +29,6 @@ namespace Promotion_Engine.Contracts
         }
 
         //Add all the new implementation of IPromotion
-        public List<IPromotion> ApplyPromotion => new List<IPromotion>{ new FixedPricePromotion() };
+        public List<IPromotion> ApplyPromotion => new List<IPromotion>{ new FixedPricePromotion(), new FixedPricePromotionaType2() };
     }
 }
