@@ -19,6 +19,7 @@ namespace Promotion_Engine.Contracts
                     ProductsToBuy = response.productsToBuy;
                     FinalPrice = response.finalPrice;
                 }
+                FinalPrice = ItemsWithoutDiscount.ApplyPromotion(ProductsToBuy, FinalPrice);
                 return FinalPrice;
             }
         }
