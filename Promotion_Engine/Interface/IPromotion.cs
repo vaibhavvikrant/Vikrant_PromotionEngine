@@ -5,6 +5,6 @@ namespace Promotion_Engine.Interface
 {
     public interface IPromotion
     {
-        decimal ApplyPromotion(List<ProductToBuy> productsToBuy);
+        (decimal finalPrice, List<ProductToBuy> productsToBuy) ApplyPromotion(List<ProductToBuy> productsToBuy, decimal finalPrice);
     }
 }

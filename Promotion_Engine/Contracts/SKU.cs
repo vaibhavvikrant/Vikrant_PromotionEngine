@@ -14,9 +14,10 @@ namespace Promotion_Engine.Contracts
                 // All the classes implementing IPromotion, their Applypromotion method will be called from here.
                 foreach (var promotion in ApplyPromotion)
                 {
-                    promotion.ApplyPromotion(ProductsToBuy);
+                    var response = promotion.ApplyPromotion(ProductsToBuy, FinalPrice);
+                    ProductsToBuy = response.productsToBuy;
+                    FinalPrice = response.finalPrice;
                 }
-
                 return FinalPrice;
             }
         }
